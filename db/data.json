@@ -1,10 +1,16 @@
 {
   "posts": [
     {
-      "id": "151a",
-      "name": "Mathematician",
-      "post": "This is Jordi",
-      "image": "https://m.media-amazon.com/images/M/MV5BMjU4Mzc0YmQtYzlkNy00ZjJkLWE2NDktZmM1OWZmOTAyOTBlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+      "id": 1,
+      "name": "PaI",
+      "post": "Olympic person",
+      "image": "https://picsum.photos/id/212/200"
+    },
+    {
+      "id": 2,
+      "name": "por",
+      "post": "woman person",
+      "image": "https://picsum.photos/id/200/200"
     }
   ]
 }

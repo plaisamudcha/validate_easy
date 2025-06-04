@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { Sch } from "../Validate/Schema";
 import { YupToError } from "../Validate/YupToError";
+import { useFetchStore } from "../stores/useFetchStore";
 
 export default function CreatePost() {
+  const posts = useFetchStore((state) => state.post);
   const navi = useNavigate();
   const post = {
     name: "",
@@ -19,9 +21,15 @@ export default function CreatePost() {
     e.preventDefault();
     try {
       await Sch.validate(formData, { abortEarly: false });
+
       await fetch("http://localhost:8000/posts", {
         method: "POST",
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          id:
+            (posts.length > 0 ? Math.max(...posts.map((post) => post.id)) : 0) +
+            1,
+        }),
       });
       navi("/post");
     } catch (error) {

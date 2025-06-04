@@ -3,18 +3,13 @@ import { Sch } from "../Validate/Schema";
 import { YupToError } from "../Validate/YupToError";
 
 export default function PostCard({ item }) {
-  const initial = {
-    name: "",
-    post: "",
-    image: "",
-  };
   const [isEdit, setIsEdit] = useState(false);
   const [dataEdit, setDataEdit] = useState({
-    name: "",
-    post: "",
-    image: "",
+    name: item.name,
+    post: item.post,
+    image: item.image,
   });
-  const [error, setError] = useState(initial);
+  const [error, setError] = useState({});
 
   const hdlChange = (e) => {
     setDataEdit({ ...dataEdit, [e.target.name]: e.target.value });
