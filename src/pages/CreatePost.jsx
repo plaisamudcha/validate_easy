@@ -90,7 +90,6 @@ export default function CreatePost() {
           Post to data
         </button>
       </fieldset>
-      <pre>{JSON.stringify(formData, null, 2)}</pre>
     </div>
   );
 }
